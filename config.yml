@@ -1,0 +1,6 @@
+
+
+#  Block x,y,z,life,cost item,cost amount,other
+
+Stones:
+  - "DIAMOND_BLOCK, 10, 10, 10, 3, DIAMOND, 2, 100"

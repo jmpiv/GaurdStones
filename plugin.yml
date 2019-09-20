@@ -1,0 +1,5 @@
+name: GuardStones
+main: com.jpmiii.guardstones.GuardStones
+version: 0.1
+depend: [WorldGuard, NameLayer, Citadel, WorldEdit]
+commands:
