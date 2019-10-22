@@ -136,6 +136,7 @@ public class GuardStonesListen implements Listener {
 
 			if (event.getClickedBlock().getType() == Material.IRON_BLOCK) {
 				Location loc = event.getPlayer().getLocation();
+				this.plugin.getLogger().info(loc.toString());
 				loc.add(0, -1, 0);
 				if (event.getClickedBlock().getLocation().distanceSquared(loc) < 1.0) {
 
@@ -144,7 +145,7 @@ public class GuardStonesListen implements Listener {
 					boolean pocketFound = false;
 					boolean goldFound = false;
 					if (event.getAction().name() == "RIGHT_CLICK_BLOCK") {
-						while (!pocketFound && relativeAltitude + event.getClickedBlock().getY() < 256) {
+						while (!pocketFound && relativeAltitude + event.getClickedBlock().getY() < 259) {
 							relativeAltitude++;
 							if (event.getClickedBlock().getRelative(0, relativeAltitude, 0).getType() == Material.AIR) {
 								airCount++;
@@ -161,7 +162,7 @@ public class GuardStonesListen implements Listener {
 								}
 							}
 						}
-						if (relativeAltitude + event.getClickedBlock().getY() > 255) {
+						if (relativeAltitude + event.getClickedBlock().getY() > 259) {
 							return;
 						}
 					} else { // LEFT CLICK
@@ -187,6 +188,7 @@ public class GuardStonesListen implements Listener {
 						}
 					}
 					event.getPlayer().teleport(loc);
+					this.plugin.getLogger().info(loc.toString());
 					event.getPlayer().setVelocity(new Vector(0, 0, 0));
 				}
 			}
@@ -223,18 +225,21 @@ public class GuardStonesListen implements Listener {
 
 //			LocalPlayer p = WorldGuardPlugin.inst().wrapPlayer(event.getPlayer());
 			for (ProtectedRegion region : getSet(event.getPlayer().getLocation())) {
+				int lif = region.getFlag(GuardStones.LIFE);
 				if (!isMember(event.getPlayer(), region)) {
 					if (readyYet(event.getPlayer())) {
-						int lif = region.getFlag(GuardStones.LIFE);
+						
 						if (((System.currentTimeMillis() / 3600000) < (lif - 1))) {
 							region.setFlag(GuardStones.LIFE, lif - 1);
 							event.getPlayer().sendMessage(
-									"damage left = " + ((lif - 1) - (System.currentTimeMillis() / 3600000)));
+									"life left = " + ((lif - 1) - (System.currentTimeMillis() / 3600000)));
 						} else {
 							container.get(event.getPlayer().getWorld()).removeRegion(region.getId());
 							event.getPlayer().sendMessage("Field Destroyed");
 						}
 					}
+				} else {
+					event.getPlayer().sendMessage("life left = " + ((lif) - (System.currentTimeMillis() / 3600000)));
 				}
 			}
 		}

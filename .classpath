@@ -2,10 +2,10 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/Jim/spigot/Spigot/Spigot-API/target/spigot-api-1.12.2-R0.1-SNAPSHOT-shaded.jar" sourcepath="C:/Users/Jim/spigot/Spigot/Spigot-API/target/spigot-api-1.12.2-R0.1-SNAPSHOT-shaded.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Jim/Downloads/worldguard-bukkit-6.2.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Jim/Downloads/MC/Citadel-3.11.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Jim/Downloads/MC/NameLayer-2.11.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Jim/Downloads/worldedit-bukkit-6.1.9.jar"/>
+	<classpathentry kind="lib" path="/media/jim/8A8C00C68C00AF2F/Users/Jim/spigot/Spigot/Spigot-API/target/spigot-api-1.12.2-R0.1-SNAPSHOT-shaded.jar"/>
+	<classpathentry kind="lib" path="/media/jim/8A8C00C68C00AF2F/Users/Jim/Downloads/MC/Citadel-3.11.5.jar"/>
+	<classpathentry kind="lib" path="/media/jim/8A8C00C68C00AF2F/Users/Jim/Downloads/MC/NameLayer-2.11.1.jar"/>
+	<classpathentry kind="lib" path="/media/jim/8A8C00C68C00AF2F/Users/Jim/Downloads/worldedit-bukkit-6.1.9.jar"/>
+	<classpathentry kind="lib" path="/media/jim/8A8C00C68C00AF2F/Users/Jim/Downloads/worldguard-bukkit-6.2.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
